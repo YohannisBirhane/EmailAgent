@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	log.Println("Starting MailPilot Go Backend Server...")
+	log.Println("Starting MailPilot AI Go Backend Server...")
 
 	// Initialize Database connection
 	database.InitDB()

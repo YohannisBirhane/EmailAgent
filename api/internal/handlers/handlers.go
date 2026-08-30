@@ -14,7 +14,7 @@ import (
 func HealthCheck(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status":  "healthy",
-		"service": "MailPilot Go API Server",
+		"service": "MailPilot AI Go API Server",
 		"version": "1.0.0",
 		"time":    time.Now().Format(time.RFC3339),
 	})

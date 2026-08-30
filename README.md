@@ -1,8 +1,8 @@
-# MailPilot ✈️
+# MailPilot AI ✈️
 
 **AI-Powered Email Categorization, Prioritization, Summarization, Tasking & Collaboration Agent**
 
-MailPilot is an enterprise-grade SaaS platform that connects to existing mailbox providers (Gmail, Microsoft 365, IMAP) to automatically triage incoming email, generate grounded thread summaries, extract actionable tasks, and provide a collaboration layer for team inboxes.
+MailPilot AI is an enterprise-grade SaaS platform that connects to existing mailbox providers (Gmail, Microsoft 365, IMAP) to automatically triage incoming email, generate grounded thread summaries, extract actionable tasks, and provide a collaboration layer for team inboxes.
 
 ---
 

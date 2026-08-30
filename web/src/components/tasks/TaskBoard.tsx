@@ -1,6 +1,6 @@
 import React from 'react';
-import { CheckSquare, Calendar, User, ExternalLink, Sparkles, Plus } from 'lucide-react';
-import { TaskItem } from '../../types';
+import { CheckSquare, Calendar, User, ExternalLink, Plus } from 'lucide-react';
+import type { TaskItem } from '../../types';
 
 export const TaskBoard: React.FC = () => {
   const sampleTasks: TaskItem[] = [

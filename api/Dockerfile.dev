@@ -1,0 +1,17 @@
+FROM golang:1.22-alpine
+
+WORKDIR /app
+
+# Copy module definition
+COPY go.mod ./
+
+# Download Go dependencies
+RUN go mod download || true
+
+# Copy backend source code
+COPY . .
+
+EXPOSE 4000
+
+# Run main Go application directly inside container
+CMD ["go", "run", "cmd/api/main.go"]

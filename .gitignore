@@ -1,0 +1,73 @@
+# ======================================================
+# MailPilot Root Git Ignore Rules (.gitignore)
+# ======================================================
+
+# --- Environment & Sensitive Credentials ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# --- Project Documentation ---
+srs.md
+docs/srs.md
+
+# --- Node / Frontend Build Artifacts (web/) ---
+node_modules/
+web/node_modules/
+dist/
+web/dist/
+dist-ssr/
+web/dist-ssr/
+.eslintcache
+web/.eslintcache
+
+# --- Go / Backend Binaries & Executables (api/) ---
+api/server
+api/server.exe
+api/bin/
+*.exe
+*.exe?
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+.air/
+api/.air/
+
+# --- Python AI Microservice (ai_service/) ---
+__pycache__/
+ai_service/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+
+# --- Database & Storage Volumes ---
+postgres_data/
+*.sqlite
+*.db
+
+# --- Logs & Performance Traces ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+
+# --- IDE & Operating System Files ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

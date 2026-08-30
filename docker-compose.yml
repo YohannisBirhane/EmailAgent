@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # 1. React Frontend (Vite)
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  # 2. Go Backend API (Gin)
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4000:4000"
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=secret
+      - DB_NAME=mailpilot
+      - DB_PORT=5432
+      - AI_SERVICE_URL=http://ai_service:8000
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - postgres
+      - ai_service
+
+  # 3. Python AI Microservice (FastAPI + Gemini + RAG)
+  ai_service:
+    build:
+      context: ./ai_service
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ai_service:/app
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+  # 4. PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: mailpilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

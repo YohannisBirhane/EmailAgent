@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Send, Clock, User, MessageSquare, CornerUpLeft } from 'lucide-react';
+import { ArrowLeft, Send, Clock, CornerUpLeft } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { SummaryCard } from './SummaryCard';
 import { TaskExtractor } from './TaskExtractor';

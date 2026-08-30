@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, CheckCircle, ShieldCheck, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
-import { EmailThread } from '../../types';
+import type { EmailThread } from '../../types';
 
 interface SummaryCardProps {
   thread: EmailThread;

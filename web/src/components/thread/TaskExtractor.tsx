@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { CheckSquare, Calendar, User, ExternalLink, Plus, Check } from 'lucide-react';
-import { EmailThread, TaskItem } from '../../types';
+import type { EmailThread, TaskItem } from '../../types';
 
 interface TaskExtractorProps {
-  thread: EmailThread;
+  thread?: EmailThread;
   onAddTask?: (task: Partial<TaskItem>) => void;
 }
 
-export const TaskExtractor: React.FC<TaskExtractorProps> = ({ thread }) => {
+export const TaskExtractor: React.FC<TaskExtractorProps> = () => {
   const [createdTasks, setCreatedTasks] = useState<string[]>([]);
 
   const sampleExtractedTasks = [

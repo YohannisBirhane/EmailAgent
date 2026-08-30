@@ -70,5 +70,9 @@ func InitDB() *gorm.DB {
 	}
 
 	DB = db
+
+	// Seed database with initial demo data if empty
+	SeedDatabase()
+
 	return db
 }

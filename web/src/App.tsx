@@ -3,9 +3,20 @@ import { AppProvider, useApp } from './context/AppContext';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { TriageInbox } from './components/triage/TriageInbox';
+import { ThreadDetail } from './components/thread/ThreadDetail';
+import { TaskBoard } from './components/tasks/TaskBoard';
 
 const MainContent: React.FC = () => {
-  const { activeView } = useApp();
+  const { activeView, selectedThreadId } = useApp();
+
+  // If a thread is selected, show ThreadDetail view
+  if (selectedThreadId) {
+    return (
+      <main style={{ flex: 1, overflowY: 'auto', background: 'var(--bg-primary)' }}>
+        <ThreadDetail />
+      </main>
+    );
+  }
 
   return (
     <main style={{ flex: 1, overflowY: 'auto', background: 'var(--bg-primary)' }}>
@@ -16,12 +27,7 @@ const MainContent: React.FC = () => {
           <p>Multi-user ticket assignment & presence indicators (Phase 3)</p>
         </div>
       )}
-      {activeView === 'tasks' && (
-        <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-muted)' }}>
-          <h2>Extracted Tasks Kanban Board</h2>
-          <p>Interactive task board synced with Asana, Jira, Trello & Google Tasks (Phase 2)</p>
-        </div>
-      )}
+      {activeView === 'tasks' && <TaskBoard />}
       {activeView === 'analytics' && (
         <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-muted)' }}>
           <h2>Analytics & Response Metrics</h2>

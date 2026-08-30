@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Sparkles, SlidersHorizontal, ArrowUpDown, RefreshCw, CheckCircle } from 'lucide-react';
+import React from 'react';
+import { Sparkles, SlidersHorizontal, ArrowUpDown } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { ThreadCard } from './ThreadCard';
-import { CategoryType, PriorityTier, EmailThread } from '../../types';
+import type { CategoryType, PriorityTier, EmailThread } from '../../types';
 
 // Initial Demo Dataset matching Phase 1 Specs
 const initialThreads: EmailThread[] = [
@@ -177,7 +177,7 @@ export const TriageInbox: React.FC = () => {
         </div>
 
         {filteredThreads.length === 0 ? (
-          <div className="glass-panel" style={{ padding: '48px', textAlignment: 'center', textAlign: 'center', color: 'var(--text-muted)' }}>
+          <div className="glass-panel" style={{ padding: '48px', textAlign: 'center', color: 'var(--text-muted)' }}>
             <p style={{ fontSize: '1rem', fontWeight: 500 }}>No conversations match your active filters.</p>
             <button
               className="btn-secondary"

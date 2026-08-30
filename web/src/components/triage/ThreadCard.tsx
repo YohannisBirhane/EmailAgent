@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sparkles, Clock, AlertCircle, CheckCircle2, User, FileText } from 'lucide-react';
-import { EmailThread } from '../../types';
+import { Sparkles, Clock, AlertCircle } from 'lucide-react';
+import type { EmailThread } from '../../types';
 
 interface ThreadCardProps {
   thread: EmailThread;

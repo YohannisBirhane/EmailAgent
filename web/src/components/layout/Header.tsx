@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Bell, Sparkles, User, Filter } from 'lucide-react';
+import { Search, Bell, Sparkles, Filter } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const Header: React.FC = () => {

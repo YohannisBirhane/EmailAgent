@@ -1,7 +1,7 @@
 import React from 'react';
-import { Inbox, Users, CheckSquare, BarChart3, Settings, ShieldCheck, Mail } from 'lucide-react';
+import { Inbox, Users, CheckSquare, BarChart3, Settings, ShieldCheck } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
-import { ActiveView } from '../../types';
+import type { ActiveView } from '../../types';
 
 export const Sidebar: React.FC = () => {
   const { activeView, setActiveView } = useApp();
@@ -21,7 +21,7 @@ export const Sidebar: React.FC = () => {
       background: 'var(--bg-secondary)',
       display: 'flex',
       flexDirection: 'column',
-      justify: 'space-between',
+      justifyContent: 'space-between',
       padding: '20px 12px',
       height: 'calc(100vh - 64px)'
     }}>
@@ -39,7 +39,7 @@ export const Sidebar: React.FC = () => {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'space-between',
+                justifyContent: 'space-between',
                 padding: '10px 14px',
                 borderRadius: 'var(--radius-md)',
                 background: isActive ? 'rgba(99, 102, 241, 0.15)' : 'transparent',
@@ -76,7 +76,7 @@ export const Sidebar: React.FC = () => {
 
       {/* Connection & System Status Footer */}
       <div className="glass-card" style={{ padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyBetween: 'space-between', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: 'var(--accent-emerald)', fontWeight: 600 }}>
             <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--accent-emerald)' }} />
             Gmail Connected
